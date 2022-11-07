@@ -1,0 +1,65 @@
+---
+# folder (object type)
+folder:
+  # folder:owner (object relation)
+  owner:
+    # incl permissions of other object relations on the same object type
+    union: 
+    - parent
+    - viewer
+    - can_create_file
+
+  # folder:parent (object relation)
+  parent:
+    union: 
+    - viewer
+
+  # folder:viewer (object relation)
+  viewer:
+    union:
+
+  # folder:can_create_file (object relation)
+  can_create_file:
+    union:
+
+# doc (object type)
+doc:
+  # doc:owner (object relation)
+  owner:
+    # incl permissions of other object relations on the same object type
+    union:
+    - parent
+    - viewer
+    - can_change_owner
+    - can_share
+    - can_write
+    - can_read
+
+  # doc:parent (object relation)
+  parent:
+    union:
+    - viewer
+    - can_share
+    - can_write
+    - can_read
+
+  # doc:viewer (object relation)
+  viewer:
+    union:
+    - can_read
+  
+  # doc:can_change_owner (object relation)
+  can_change_owner:
+    union:
+  
+  # doc:can_share (object relation)
+  can_share:
+    union:
+  
+  # doc:can_write (object relation)
+  can_write:
+    union:
+  
+  # doc:can_read (object relation)
+  can_read:
+    union:

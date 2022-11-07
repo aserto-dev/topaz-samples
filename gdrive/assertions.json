@@ -1,0 +1,140 @@
+{
+    "assertions": [
+        {
+            "check_relation": {
+                "subject": {
+                    "type": "user",
+                    "key": "anne"
+                },
+                "relation": {
+                    "name": "can_write",
+                    "objectType": "doc"
+                },
+                "object": {
+                    "type": "doc",
+                    "key": "2021-roadmap"
+                }
+            },
+            "expected": true
+        },
+        {
+            "check_relation": {
+                "subject": {
+                    "type": "user",
+                    "key": "beth"
+                },
+                "relation": {
+                    "name": "can_change_owner",
+                    "objectType": "doc"
+                },
+                "object": {
+                    "type": "doc",
+                    "key": "2021-roadmap"
+                }
+            },
+            "expected": false
+        },
+        {
+            "check_relation": {
+                "subject": {
+                    "type": "user",
+                    "key": "charles"
+                },
+                "relation": {
+                    "name": "can_read",
+                    "objectType": "doc"
+                },
+                "object": {
+                    "type": "doc",
+                    "key": "2021-roadmap"
+                }
+            },
+            "expected": true
+        },
+        {
+            "check_relation": {
+                "subject": {
+                    "type": "user",
+                    "key": "charles"
+                },
+                "relation": {
+                    "name": "can_write",
+                    "objectType": "doc"
+                },
+                "object": {
+                    "type": "doc",
+                    "key": "2021-roadmap"
+                }
+            },
+            "expected": false
+        },
+        {
+            "check_relation": {
+                "subject": {
+                    "type": "user",
+                    "key": "daniel"
+                },
+                "relation": {
+                    "name": "can_read",
+                    "objectType": "doc"
+                },
+                "object": {
+                    "type": "doc",
+                    "key": "2021-roadmap"
+                }
+            },
+            "expected": false
+        },
+        {
+            "check_relation": {
+                "subject": {
+                    "type": "user",
+                    "key": "daniel"
+                },
+                "relation": {
+                    "name": "can_read",
+                    "objectType": "doc"
+                },
+                "object": {
+                    "type": "doc",
+                    "key": "public-roadmap"
+                }
+            },
+            "expected": true
+        },
+        {
+            "check_relation": {
+                "subject": {
+                    "type": "user",
+                    "key": "anne"
+                },
+                "relation": {
+                    "name": "can_write",
+                    "objectType": "doc"
+                },
+                "object": {
+                    "type": "doc",
+                    "key": "public-roadmap"
+                }
+            },
+            "expected": true
+        },
+        {
+            "check_relation": {
+                "subject": {
+                    "type": "user",
+                    "key": "charles"
+                },
+                "relation": {
+                    "name": "can_write",
+                    "objectType": "doc"
+                },
+                "object": {
+                    "type": "doc",
+                    "key": "public-roadmap"
+                }
+            },
+            "expected": false
+        }
+    ]
+}
