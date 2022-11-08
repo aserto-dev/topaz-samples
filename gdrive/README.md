@@ -202,7 +202,7 @@ To validate the model described above:
 6. Load the domain model, using the manifest file:
 
 	```
-	topaz load model ./model/manifest.yaml --insecure
+	topaz load ./model/manifest.yaml --insecure
 	```
 
 7. Load the sample objects and relations, using:
