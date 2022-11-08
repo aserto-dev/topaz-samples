@@ -1,6 +1,6 @@
 # Topaz Google Drive Sample
 
-> **CREDITS**: This content is an adoption of the [OpenFGA Google Drive Sample Store](https://github.com/openfga/sample-stores/blob/main/stores/gdrive/README.md) to demonstrate and compare how this scenario can be implemented and achieved using Topaz.
+> **CREDITS**: This content is an adaptation of the [OpenFGA Google Drive Sample Store](https://github.com/openfga/sample-stores/blob/main/stores/gdrive/README.md) to demonstrate and compare how this scenario can be implemented and achieved using Topaz.
 
 
 ## Table of Content
