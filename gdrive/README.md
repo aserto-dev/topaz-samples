@@ -161,7 +161,7 @@ These are represented in these files:
 | anne    | write        | doc:public-roadmap | Yes      |
 | charles | write        | doc:public-roadmap | No       |
 
-These are represented in this file: [assertions.json](.test/assertions.json).
+These are represented in this file: [assertions.json](./test/assertions.json).
 
 ## Validating the model
 
