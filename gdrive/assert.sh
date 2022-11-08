@@ -2,7 +2,7 @@
 
 TOPAZ_SVC=localhost:9292
 
-cat assertions.json | jq -c '.assertions[] ' | (
+cat test/assertions.json | jq -c '.assertions[] ' | (
     while read BODY; do
         REQ=$(echo $BODY | jq '.check_relation')
         EXP=$(echo $BODY | jq '.expected')

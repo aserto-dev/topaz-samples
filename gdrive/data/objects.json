@@ -1,0 +1,49 @@
+{
+    "objects": [
+        {
+            "key": "anne",
+            "type": "user",
+            "displayName": "user:anne"
+        },
+        {
+            "key": "beth",
+            "type": "user",
+            "displayName": "user:beth"
+        },
+        {
+            "key": "charles",
+            "type": "user",
+            "displayName": "user:charles"
+        },
+        {
+            "key": "daniel",
+            "type": "user",
+            "displayName": "user:daniel"
+        },
+        {
+            "key": "contoso",
+            "type": "group",
+            "displayName": "group:contoso"
+        },
+        {
+            "key": "fabrikam",
+            "type": "group",
+            "displayName": "group:fabrikam"
+        },
+        {
+            "key": "product-2021",
+            "type": "folder",
+            "displayName": "folder:product-2021"
+        },
+        {
+            "key": "2021-roadmap",
+            "type": "doc",
+            "displayName": "doc:2021-roadmap"
+        },
+        {
+            "key": "public-roadmap",
+            "type": "doc",
+            "displayName": "doc:public-roadmap"
+        }
+    ]
+}

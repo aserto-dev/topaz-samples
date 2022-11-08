@@ -127,7 +127,7 @@ doc:
     union:
 ```
 
-The model is represented in this file: [manifest.yaml](./manifest.yaml)
+The model is represented in this file: [manifest.yaml](./model/manifest.yaml)
 
 ### Tuples
 
@@ -143,7 +143,10 @@ The model is represented in this file: [manifest.yaml](./manifest.yaml)
 | beth                  | viewer   | doc:2021-roadmap    | Beth is a viewer of the "2021 Roadmap" document                        |
 | *                     | viewer   | doc:public-roadmap  | Everyone is a viewer of the "Public Roadmap" document                  |
 
-These are represented in this file: [tuples.json](./tuples.json).
+These are represented in these files: 
+
+* [objects.json](./data/objects.json)
+* [relations.json](./data/relations.json)
 
 ### Assertions
 
@@ -158,5 +161,84 @@ These are represented in this file: [tuples.json](./tuples.json).
 | anne    | write        | doc:public-roadmap | Yes      |
 | charles | write        | doc:public-roadmap | No       |
 
-These are represented in this file: [assertions.json](./assertions.json).
+These are represented in this file: [assertions.json](.test/assertions.json).
+
+## Validating the model
+
+To validate the model described above:
+
+1. Clone the topaz-samples repo:
+
+	```
+	mkdir -p ~/workspace/topaz
+	cd ~/workspace/topaz
+	git clone https://github.com/aserto-dev/topaz-samples.git
+	```
+
+2. Set the current working directory to the `gdrive` sample directory
+
+	```
+	cd ~/workspace/topaz/topaz-samples/gdrive
+	```
+
+3. Install a topaz instance, see [Topaz Getting Started](https://www.topaz.sh/docs/getting-started)
+
+	```
+	topaz install
+	```
+
+4. Configure the topaz instance, using:
+ 
+	```
+	topaz configure gdrive --resource=opcr.io/aserto-templates/policy-template:latest -d -s
+	```
+
+5. Start your topaz instace, using:
+
+	```
+	topaz start
+	```
+
+6. Load the domain model, using the manifest file:
+
+	```
+	topaz load model ./model/manifest.yaml --insecure
+	```
+
+7. Load the sample objects and relations, using:
+
+	```
+	topaz import --directory ./data --insecure
+	```
+
+8.	Validate the assertions, using:
+
+	```
+	./assert.sh
+	``` 
+
+9. Validate the results:
+
+	```
+	./assert.sh
+	PASS
+	PASS
+	FAIL REQ:{"subject":{"type":"user","key":"charles"},"relation":{"name":"can_read","objectType":"doc"},"object":{"type":"doc","key":"2021-roadmap"}}
+	PASS
+	PASS
+	FAIL REQ:{"subject":{"type":"user","key":"daniel"},"relation":{"name":"can_read","objectType":"doc"},"object":{"type":"doc","key":"public-roadmap"}}
+	PASS
+	PASS
+	``` 
+
+### NOTES:
+The reason why assertions #3 and #6 are currently failing, is due to the fact they rely on two not yet supported capabilities in topaz, specificly:
+ 
+#### Everyone to object relationship:
+
+```{"user": "*", "relation": "viewer", "object": "doc:public-roadmap"}```
+
+#### Userset to object relationship:
+
+```{"user": "group:fabrikam#member", "relation": "viewer", "object": "folder:product-2021"}```
 

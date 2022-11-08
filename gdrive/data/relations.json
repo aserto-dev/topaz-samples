@@ -1,0 +1,81 @@
+{
+    "relations": [
+        {
+            "subject": {
+                "type": "folder",
+                "key": "product-2021"
+            },
+            "relation": "parent",
+            "object": {
+                "type": "doc",
+                "key": "2021-roadmap"
+            }
+        },
+        {
+            "subject": {
+                "type": "user",
+                "key": "beth"
+            },
+            "relation": "viewer",
+            "object": {
+                "type": "doc",
+                "key": "2021-roadmap"
+            }
+        },
+        {
+            "subject": {
+                "type": "folder",
+                "key": "product-2021"
+            },
+            "relation": "parent",
+            "object": {
+                "type": "doc",
+                "key": "public-roadmap"
+            }
+        },
+        {
+            "subject": {
+                "type": "user",
+                "key": "anne"
+            },
+            "relation": "owner",
+            "object": {
+                "type": "folder",
+                "key": "product-2021"
+            }
+        },
+        {
+            "subject": {
+                "type": "user",
+                "key": "anne"
+            },
+            "relation": "member",
+            "object": {
+                "type": "group",
+                "key": "contoso"
+            }
+        },
+        {
+            "subject": {
+                "type": "user",
+                "key": "beth"
+            },
+            "relation": "member",
+            "object": {
+                "type": "group",
+                "key": "contoso"
+            }
+        },
+        {
+            "subject": {
+                "type": "user",
+                "key": "charles"
+            },
+            "relation": "member",
+            "object": {
+                "type": "group",
+                "key": "fabrikam"
+            }
+        }
+    ]
+}
