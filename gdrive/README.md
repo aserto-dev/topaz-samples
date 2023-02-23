@@ -190,10 +190,10 @@ To validate the model described above:
 4. Configure the topaz instance, using:
  
 	```
-	topaz configure gdrive --resource=opcr.io/aserto-templates/policy-template:latest -d -s
+	topaz configure gdrive --resource=ghcr.io/aserto-policies/policy-template:latest -d -s
 	```
 
-5. Start your topaz instace, using:
+5. Start your topaz instance, using:
 
 	```
 	topaz start
